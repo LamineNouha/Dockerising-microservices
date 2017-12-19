@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>tn.insat.tpmicro</groupId>
+	<artifactId>proxy-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>proxy-service</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.8.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>proxy-spring-boot</finalName>
+	</build>
+
+
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<activity id_activity="0">
+<name>Menu</name>
+<description>screen de menu pour commencer le jeu,
+	faire des configurations (music, sounds, ...), avoir des informations à propos du jeu</description>
+
+[...]
+<output_states>
+	<output_state id_output="1"/>
+</output_states>
+[...]
+</activity>
+
+
+
+<activity id_activity="1">
+<name>Select Level</name>
+<description>screen exposant les differents niveaux du jeu (les niveaux débloqués et bloqués),
+	permettent le suivi de l'avancement dans le jeu</description>
+
+[...]
+<input_state id_input="0" />
+[...]
+<output_states>
+	<!-- tous les niveaux, sont principalement 15 -->
+	<output_state id_output="2"/>
+	<output_state id_output="3"/>
+	<output_state id_output="4"/>
+	.
+	.
+	.
+	<output_state id_output="15"/>
+</output_states>
+[...]
+</activity>
+
+
+
+
+<activity id_activity="2">
+<name>Level 1</name>
+<description>un niveau pour que l'utilisateur sait quoi mettre comme matériels de secourisme (bondage, medicaments, ...)
+	dans son sac de secourisme.</description>
+
+[...]
+<input_state id_input="1" />
+[...]
+<output_states>
+	<output_state id_output="16"/>
+	<output_state id_output="17"/>
+</output_states>
+[...]
+</activity>
+<goals>
+<goal id_goal="1" type="edu">
+	<name>savoir les outils de secourisme</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+<goal id_goal="2" type="peda">
+	<name>connaitre le vocabulaire, les mots scientifiques en secourisme, les noms des outils</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+[...]
+</goals>
+
+
+
+
+<activity id_activity="3">
+<name>Level 2</name>
+<description>un niveau pour que l'utilisateur sait quoi faire en cas d'une situation d'incendie</description>
+
+[...]
+<input_state id_input="1" />
+[...]
+<output_states>
+	<output_state id_output="16"/>
+	<output_state id_output="17"/>
+</output_states>
+[...]
+</activity>
+<goals>
+<goal id_goal="3" type="edu">
+	<name>avoir le bon reflexe de faire des actions dans un ordre précis pour résoudre la situation</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+<goal id_goal="4" type="edu">
+	<name>memoriser le numéro d'urgence (197)</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+[...]
+</goals>
+
+
+<activity id_activity="4">
+<name>Level 3</name>
+<description>un niveau pour que l'utilisateur sait quoi faire en cas d'une situation d'accident de route</description>
+
+[...]
+<input_state id_input="1" />
+[...]
+<output_states>
+	<output_state id_output="16"/>
+	<output_state id_output="17"/>
+</output_states>
+[...]
+</activity>
+<goals>
+<goal id_goal="3" type="edu">
+	<name>avoir le bon reflexe de faire des actions dans un ordre précis pour résoudre la situation</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+<goal id_goal="4" type="edu">
+	<name>memoriser le numéro d'urgence (190)</name>
+	<goal_links>
+		<goal_link object="output_state" id_object="16"/>
+		<goal_link object="output_state" id_object="17"/>
+	</goal_links>
+</goal>
+[...]
+</goals>
+
+<activity id_activity="16">
+<name>Win</name>
+<description>screen de succès d'un niveau de jeu, exposant le score obtenu (nombre des étoiles)</description>
+
+[...]
+<intput_states>
+	<!-- tous les niveaux, sont principalement 15 -->
+	<output_state id_input="2"/>
+	<output_state id_input="3"/>
+	<output_state id_input="4"/>
+	.
+	.
+	.
+	<output_state id_input="15"/>
+</intput_states>
+[...]
+<output_state id_output="1"/>
+[...]
+</activity>
+
+<activity id_activity="17">
+<name>Game Over</name>
+<description>screen d'echec</description>
+
+[...]
+<intput_states>
+	<!-- tous les niveaux, sont principalement 15 -->
+	<output_state id_input="2"/>
+	<output_state id_input="3"/>
+	<output_state id_input="4"/>
+	.
+	.
+	.
+	<output_state id_input="15"/>
+</intput_states>
+[...]
+<output_state id_output="1"/>
+[...]
+</activity>
+
