@@ -3,7 +3,7 @@
 ![screen shot 2017-12-19 at 11 02 48 pm](https://user-images.githubusercontent.com/25775136/34181318-18b00d08-e512-11e7-86b8-bdfca734d37e.png)
 ## Microservices to deploy on Docker
 * Product Service: The main service, which offers a REST API listing all products.
-* Config Service : Service de configuration, dont le rôle est de centraliser les fichiers de configuration des différents microservices dans un endroit unique.
+* Config Service : Configuration service, whose role is to centralize the configuration files of the various microservices in a single place.
 * Proxy Service: A gateway that handles the routing of a request to one of the instances of a service, in order to automatically manage the load distribution.
 * Discovery Service: Service that records service instances for discovery by other services.
 
@@ -65,7 +65,7 @@ $ docker images
 ```
 ![screen shot 2017-12-19 at 11 09 14 pm](https://user-images.githubusercontent.com/25775136/34181338-2b0f4edc-e512-11e7-9185-06e10ec45b2e.png)
 
-We reapeat the same thing with the rest of our microservices
+We repeat the same thing with the rest of our microservices
 
 ![screen shot 2017-12-19 at 11 09 48 pm](https://user-images.githubusercontent.com/25775136/34181344-2e2901ee-e512-11e7-9fd0-0d3f3ac242e0.png)
 
